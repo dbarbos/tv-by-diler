@@ -7,7 +7,10 @@
 
 import UIKit
 
+// MARK: - Class
 class SearchViewController: UIViewController, Storyboarded {
+    
+    // MARK: - Properties
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -19,6 +22,8 @@ class SearchViewController: UIViewController, Storyboarded {
     var viewModel = SearchViewModel()
     let searchController = UISearchController()
     
+    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +41,7 @@ class SearchViewController: UIViewController, Storyboarded {
         
     }
     
+    // MARK: - Methods
     private func initSearchController() {
         searchController.loadViewIfNeeded()
         searchController.searchResultsUpdater = self
@@ -51,6 +57,7 @@ class SearchViewController: UIViewController, Storyboarded {
     }
 }
 
+// MARK: - Extensions
 extension SearchViewController {
     enum Event {
         case showDetail(show: TVShow)
@@ -58,6 +65,7 @@ extension SearchViewController {
     }
 }
 
+// MARK: - Extensions SearchViewModelDelegate
 extension SearchViewController: SearchViewModelDelegate {
     
     func didUpdateSearchList() {
@@ -74,6 +82,7 @@ extension SearchViewController: SearchViewModelDelegate {
     }
 }
 
+// MARK: - Extensions UITableViewDataSource, UITableViewDelegate
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -120,6 +129,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+// MARK: - Extensions UISearchBarDelegate
 extension SearchViewController: UISearchBarDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchBar.text = searchController.searchBar.text
@@ -130,6 +140,7 @@ extension SearchViewController: UISearchBarDelegate {
     }
 }
 
+// MARK: - Extensions UISearchResultsUpdating
 extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }

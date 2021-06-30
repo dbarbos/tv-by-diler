@@ -7,7 +7,10 @@
 
 import UIKit
 
+// MARK: - Class
 class ShowDetailViewController: UIViewController , Storyboarded{
+    
+    // MARK: - Properties
     
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -26,12 +29,8 @@ class ShowDetailViewController: UIViewController , Storyboarded{
     @IBOutlet weak var premieredLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
-    
     @IBOutlet weak var selectSeasonButton: UIButton!
-    
     @IBOutlet weak var addOrRemoveToFavoriteButton: UIButton!
-    
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var viewModel: ShowDetailViewModel?
@@ -47,6 +46,8 @@ class ShowDetailViewController: UIViewController , Storyboarded{
                 : addOrRemoveToFavoriteButton.setTitle("Add to favorite", for: .normal)
         }
     }
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,21 +69,6 @@ class ShowDetailViewController: UIViewController , Storyboarded{
         
     }
     
-    func setupScrollView() {
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.contentInsetAdjustmentBehavior = .never
-
-        NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
-        ])
-        
-    }
-    
-    func setupNavigationBar() {
-        self.navigationController?.navigationBar.tintColor = .white
-        self.navigationController?.navigationBar.subviews.first?.alpha = 0
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -100,6 +86,22 @@ class ShowDetailViewController: UIViewController , Storyboarded{
         }
         
         posterImageView.addBlackGradientLayerInForeground(frame: posterImageView.bounds, colors: [#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.1978717324),.black])
+    }
+    
+    // MARK: - Methods
+    func setupScrollView() {
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.contentInsetAdjustmentBehavior = .never
+
+        NSLayoutConstraint.activate([
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
+        ])
+        
+    }
+    
+    func setupNavigationBar() {
+        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.subviews.first?.alpha = 0
     }
     
     func loadShowData() {
@@ -135,6 +137,7 @@ class ShowDetailViewController: UIViewController , Storyboarded{
 
     }
     
+    // MARK: - Actions
     @IBAction func selectSeasonButtonTapped(_ sender: Any) {
         
         guard let seasons = viewModel?.seasons else { return }
@@ -169,18 +172,21 @@ class ShowDetailViewController: UIViewController , Storyboarded{
     
 }
 
+// MARK: - Extensions
 extension ShowDetailViewController {
     enum Event {
         case showDetail(episode: Episode)
     }
 }
 
+// MARK: - Extensions ShowDetailsViewModelDelegate
 extension ShowDetailViewController: ShowDetailViewModelDelegate {
     func didUpdateSeasonsList() {
         collectionView.reloadData()
     }
 }
 
+// MARK: - Extensions UICollectionViewDataSource
 extension ShowDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -214,6 +220,7 @@ extension ShowDetailViewController: UICollectionViewDataSource {
     
 }
 
+// MARK: - Extensions UICollectionViewDelegateFlowLayout
 extension ShowDetailViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -222,6 +229,7 @@ extension ShowDetailViewController: UICollectionViewDelegateFlowLayout {
 
 }
 
+// MARK: - Extensions UICollectionViewDelegate
 extension ShowDetailViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
@@ -261,6 +269,7 @@ extension ShowDetailViewController: UICollectionViewDelegate {
     
 }
 
+// MARK: - Extensions UIScrollViewDelegate
 extension ShowDetailViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

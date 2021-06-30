@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// MARK: - Enums
 enum TabBarPage {
     case home
     case person
@@ -78,6 +79,7 @@ enum TabBarPage {
     }
 }
 
+// MARK: - Protocol
 protocol TabCoordinatorProtocol: Coordinator {
     var tabBarController: UITabBarController { get set }
     
@@ -86,8 +88,10 @@ protocol TabCoordinatorProtocol: Coordinator {
     func currentPage() -> TabBarPage?
 }
 
+// MARK: - Class
 class TabCoordinator: NSObject, TabCoordinatorProtocol {
-        
+    
+    // MARK: - Properties
     var tabBarController: UITabBarController
     
     weak var delegate: CoordinatorDelegate?
@@ -98,11 +102,14 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
     
     var flow: CoordinatorFlow { .tab }
     
+    
+    // MARK: - Init
     required init(_ navigationController: UINavigationController, data: Any?) {
         self.navigationController = navigationController
         self.tabBarController = .init()
     }
     
+    // MARK: - Methods
     func start() {
         let pages: [TabBarPage] = [
             .home,
@@ -173,6 +180,7 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
     
 }
 
+// MARK: - Extensions
 extension TabCoordinator: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         // do something maybe?

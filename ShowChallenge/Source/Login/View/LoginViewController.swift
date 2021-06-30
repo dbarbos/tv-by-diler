@@ -7,18 +7,18 @@
 
 import UIKit
 
+// MARK: - Class
 class LoginViewController: UIViewController {
     
-    
+    // MARK: - Properties
     @IBOutlet weak var actionTitleLabel: UILabel!
     @IBOutlet weak var actionDescriptionLabel: UILabel!
-    
     @IBOutlet weak var pinTextField: UITextField!
     
     let viewModel = LoginViewModel()
-    
     var didCallEvent: ((LoginViewController.Event) -> Void)?
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,10 +50,12 @@ class LoginViewController: UIViewController {
         print("LoginViewController deinited properly")
     }
     
+    // MARK: - Actions
     @IBAction func loginButtonTapped(_ sender: Any) {
         didCallEvent?(.authenticate)
     }
     
+    // MARK: - Methods
     func showWrongPinAlert() {
         let alert = UIAlertController(title: "Wrong PIN", message: "Would you like to reset the keychain and create a new PIN?", preferredStyle: .alert)
 
@@ -67,12 +69,14 @@ class LoginViewController: UIViewController {
     
 }
 
+// MARK: - Extensions
 extension LoginViewController {
     enum Event {
         case authenticate
     }
 }
 
+// MARK: - Extensions: LoginViewModelDelegate
 extension LoginViewController: LoginViewModelDelegate {
     func didGetPINStaste(state: PINState) {
         switch state {
@@ -94,6 +98,7 @@ extension LoginViewController: LoginViewModelDelegate {
     }
 }
 
+// MARK: - Extensions: UITextFieldDelegate
 extension LoginViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

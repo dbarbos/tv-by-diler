@@ -7,6 +7,7 @@
 
 import UIKit
 
+// MARK: - Coordinator Enums
 enum CoordinatorFlow {
     case login, tab, app
     case show, artist, favorite, search, more
@@ -33,6 +34,7 @@ protocol Coordinator: class {
     
 }
 
+// MARK: - Coordinator Extensions
 extension Coordinator {
     func finish() {
         childCoordinators.removeAll()

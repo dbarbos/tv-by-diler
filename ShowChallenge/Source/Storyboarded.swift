@@ -8,10 +8,12 @@
 import Foundation
 import UIKit
 
+// MARK: - Protocol
 protocol Storyboarded {
     static func instantiate() -> Self
 }
 
+// MARK: - Extensions
 extension Storyboarded where Self: UIViewController {
     static func instantiate() -> Self {
         let id = String(describing: self)

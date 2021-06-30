@@ -434,16 +434,15 @@
 		3F9E6C20268665A3000EB6D1 /* ShowChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				3F631D4B2687CA0F004741F1 /* Models */,
-				3F631D642687E774004741F1 /* Extensions */,
-				3F631D3E2687C1DC004741F1 /* Services */,
-				3F9E6C5D26866602000EB6D1 /* Source */,
 				3F9E6C21268665A3000EB6D1 /* AppDelegate.swift */,
 				3F9E6C23268665A3000EB6D1 /* SceneDelegate.swift */,
 				3F9E6C2D268665A4000EB6D1 /* Assets.xcassets */,
 				3F9E6C2F268665A4000EB6D1 /* LaunchScreen.storyboard */,
 				3F9E6C32268665A4000EB6D1 /* Info.plist */,
-				3F9E6C2A268665A3000EB6D1 /* ShowChallenge.xcdatamodeld */,
+				3F631D4B2687CA0F004741F1 /* Models */,
+				3F631D642687E774004741F1 /* Extensions */,
+				3F631D3E2687C1DC004741F1 /* Services */,
+				3F9E6C5D26866602000EB6D1 /* Source */,
 			);
 			path = ShowChallenge;
 			sourceTree = "<group>";
@@ -630,6 +629,7 @@
 		3FA5B578268A761200CD3C8B /* LocalPersistence */ = {
 			isa = PBXGroup;
 			children = (
+				3F9E6C2A268665A3000EB6D1 /* ShowChallenge.xcdatamodeld */,
 				3F6A4FA8268A85070088C0E9 /* Favorite+CoreDataClass.swift */,
 				3F6A4FA9268A85070088C0E9 /* Favorite+CoreDataProperties.swift */,
 				3FA5B580268A76EE00CD3C8B /* LocalStorageManager.swift */,

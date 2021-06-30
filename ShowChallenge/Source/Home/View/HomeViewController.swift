@@ -7,7 +7,10 @@
 
 import UIKit
 
+// MARK: - Class
 class HomeViewController: UIViewController, Storyboarded {
+    
+    // MARK: - Properties
     
     var didCallEvent: ((HomeViewController.Event) -> Void)?
     
@@ -17,6 +20,7 @@ class HomeViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,18 +41,22 @@ class HomeViewController: UIViewController, Storyboarded {
         navigationController?.navigationBar.subviews.first?.alpha = 1
     }
 }
+
+// MARK: - Extensions
 extension HomeViewController {
     enum Event {
         case showDetail(show: TVShow)
     }
 }
 
+// MARK: - Extensions HomeViewModelDelegate
 extension HomeViewController: HomeViewModelDelegate {
     func didUpdateTvShowsList() {
         collectionView.reloadData()
     }
 }
 
+// MARK: - Extensions UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -76,6 +84,7 @@ extension HomeViewController: UICollectionViewDataSource {
     
 }
 
+// MARK: - Extensions UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -91,6 +100,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - Extensions UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

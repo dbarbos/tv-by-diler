@@ -8,13 +8,17 @@
 import Foundation
 import UIKit
 
+// MARK: - Protocols
 protocol AppCoordinatorProtocol: Coordinator {
     func showLoginFlow()
     func showMainFlow()
 }
 
+// MARK: - Class
 class AppCoordinator: AppCoordinatorProtocol {
     
+    
+    // MARK: - Properties
     weak var delegate: CoordinatorDelegate?
     
     var navigationController: UINavigationController
@@ -23,10 +27,13 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     var flow: CoordinatorFlow { .app }
     
+    // MARK: - Init
     required init(_ navigationController: UINavigationController, data: Any?) {
         self.navigationController = navigationController
         navigationController.setNavigationBarHidden(true, animated: true)
     }
+    
+    // MARK: - Methods
     
     func start() {
         showLoginFlow()
@@ -48,6 +55,7 @@ class AppCoordinator: AppCoordinatorProtocol {
 
 }
 
+// MARK: - Extensions
 extension AppCoordinator: CoordinatorDelegate {
     
     func coordinatorDidFinish(childCoordinator: Coordinator) {
