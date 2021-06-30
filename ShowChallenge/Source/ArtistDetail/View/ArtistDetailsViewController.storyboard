@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Artist Details View Controller-->
+        <scene sceneID="LpN-Jh-eEp">
+            <objects>
+                <viewController storyboardIdentifier="ArtistDetailsViewController" id="aCU-KQ-mw1" customClass="ArtistDetailsViewController" customModule="ShowChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BWr-Hr-CjY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCn-c9-ah7">
+                                <rect key="frame" x="24" y="68" width="80" height="80"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="RoM-Ho-bH7">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="N4S-QM-1J8"/>
+                                    <constraint firstAttribute="bottom" secondItem="RoM-Ho-bH7" secondAttribute="bottom" id="eAL-1g-l44"/>
+                                    <constraint firstItem="RoM-Ho-bH7" firstAttribute="leading" secondItem="uCn-c9-ah7" secondAttribute="leading" id="hiu-O1-fbb"/>
+                                    <constraint firstAttribute="width" constant="80" id="sN9-7y-5mW"/>
+                                    <constraint firstAttribute="trailing" secondItem="RoM-Ho-bH7" secondAttribute="trailing" id="tkx-Dz-8pd"/>
+                                    <constraint firstItem="RoM-Ho-bH7" firstAttribute="top" secondItem="uCn-c9-ah7" secondAttribute="top" id="uRi-D1-dvK"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vSg-kg-cCO">
+                                <rect key="frame" x="112" y="83.5" width="286" height="49.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cff-mz-R8s">
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WnG-Sz-8yu">
+                                        <rect key="frame" x="0.0" y="30" width="286" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" name="CustomDarkGray"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shows" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22z-NK-UzH">
+                                <rect key="frame" x="16" y="172" width="382" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <color key="textColor" name="CustomDarkText"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LoH-kx-V7a">
+                                <rect key="frame" x="0.0" y="206.5" width="414" height="140"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="UTI-yJ-of3"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ypa-BJ-OFq">
+                                    <size key="itemSize" width="80" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ArtistShowCollectionViewCell" id="Fup-7Q-gaT" customClass="ArtistShowCollectionViewCell" customModule="ShowChallenge" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="0.0" width="80" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OA5-2r-BiE">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="130"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w0R-PN-fQY">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="130"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="film-poster-placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="bBD-fH-3Ox">
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="130"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="8"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="bBD-fH-3Ox" firstAttribute="leading" secondItem="w0R-PN-fQY" secondAttribute="leading" id="2LR-N5-stU"/>
+                                                        <constraint firstAttribute="bottom" secondItem="bBD-fH-3Ox" secondAttribute="bottom" id="MLG-gM-5zJ"/>
+                                                        <constraint firstItem="bBD-fH-3Ox" firstAttribute="top" secondItem="w0R-PN-fQY" secondAttribute="top" id="Xnp-mL-q5g"/>
+                                                        <constraint firstAttribute="trailing" secondItem="bBD-fH-3Ox" secondAttribute="trailing" id="hib-fc-WoB"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="w0R-PN-fQY" secondAttribute="trailing" id="01X-5G-muk"/>
+                                                <constraint firstItem="w0R-PN-fQY" firstAttribute="top" secondItem="OA5-2r-BiE" secondAttribute="top" id="8RI-fh-3X8"/>
+                                                <constraint firstItem="w0R-PN-fQY" firstAttribute="leading" secondItem="OA5-2r-BiE" secondAttribute="leading" id="AYI-dK-fjc"/>
+                                                <constraint firstAttribute="bottom" secondItem="w0R-PN-fQY" secondAttribute="bottom" id="EsD-X9-ggu"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="80" height="130"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="posterImageView" destination="bBD-fH-3Ox" id="a9g-tL-LSe"/>
+                                            <outlet property="posterShadowView" destination="w0R-PN-fQY" id="IaB-ZR-KcS"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VsO-Qt-eXx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uCn-c9-ah7" firstAttribute="leading" secondItem="VsO-Qt-eXx" secondAttribute="leading" constant="24" id="1gc-PO-JQa"/>
+                            <constraint firstItem="VsO-Qt-eXx" firstAttribute="trailing" secondItem="vSg-kg-cCO" secondAttribute="trailing" constant="16" id="4aM-Tu-9ZU"/>
+                            <constraint firstItem="vSg-kg-cCO" firstAttribute="centerY" secondItem="RoM-Ho-bH7" secondAttribute="centerY" id="BQZ-Ha-yrG"/>
+                            <constraint firstItem="vSg-kg-cCO" firstAttribute="leading" secondItem="uCn-c9-ah7" secondAttribute="trailing" constant="8" symbolic="YES" id="KTq-4r-3fl"/>
+                            <constraint firstItem="LoH-kx-V7a" firstAttribute="top" secondItem="22z-NK-UzH" secondAttribute="bottom" constant="8" id="MCY-AP-ger"/>
+                            <constraint firstItem="VsO-Qt-eXx" firstAttribute="trailing" secondItem="22z-NK-UzH" secondAttribute="trailing" constant="16" id="ePe-3i-NkP"/>
+                            <constraint firstItem="22z-NK-UzH" firstAttribute="top" secondItem="uCn-c9-ah7" secondAttribute="bottom" constant="24" id="hAa-Cw-3eZ"/>
+                            <constraint firstItem="uCn-c9-ah7" firstAttribute="top" secondItem="VsO-Qt-eXx" secondAttribute="top" constant="24" id="n12-Dd-Ked"/>
+                            <constraint firstItem="VsO-Qt-eXx" firstAttribute="trailing" secondItem="LoH-kx-V7a" secondAttribute="trailing" id="vpI-VM-Eh3"/>
+                            <constraint firstItem="LoH-kx-V7a" firstAttribute="leading" secondItem="VsO-Qt-eXx" secondAttribute="leading" id="xUE-Kt-i78"/>
+                            <constraint firstItem="22z-NK-UzH" firstAttribute="leading" secondItem="VsO-Qt-eXx" secondAttribute="leading" constant="16" id="zau-p4-lmZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="LoH-kx-V7a" id="1Y9-TA-7Wx"/>
+                        <outlet property="countryLabel" destination="WnG-Sz-8yu" id="RJK-iq-UKv"/>
+                        <outlet property="nameLabel" destination="Cff-mz-R8s" id="9Px-GS-6em"/>
+                        <outlet property="pictureImageView" destination="RoM-Ho-bH7" id="pTK-1f-AbX"/>
+                        <outlet property="pictureShadowView" destination="uCn-c9-ah7" id="h3j-ke-mg2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wLv-aW-qeh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.23188405797103" y="108.48214285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="film-poster-placeholder" width="201" height="300"/>
+        <image name="profile-placeholder" width="600" height="600"/>
+        <namedColor name="CustomDarkGray">
+            <color red="0.34900000691413879" green="0.34900000691413879" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CustomDarkText">
+            <color red="0.13300000131130219" green="0.13300000131130219" blue="0.13300000131130219" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

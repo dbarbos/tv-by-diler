@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="ShowChallenge" customModuleProvider="target">
+            <connections>
+                <outlet property="actionDescriptionLabel" destination="jZo-Q2-2cP" id="HlI-cf-FSb"/>
+                <outlet property="actionTitleLabel" destination="jUL-VO-7Dx" id="JaA-ch-sA9"/>
+                <outlet property="pinTextField" destination="vy4-In-XKW" id="xgB-zt-gf2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7s3-fl-fld">
+                    <rect key="frame" x="184" y="443" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="mgi-Lt-g8S"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Yq2-0L-eej">
+                    <rect key="frame" x="167" y="141.5" width="80" height="79"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="0kK-Eu-TmK"/>
+                        <constraint firstAttribute="height" constant="80" id="VH0-7e-I1T"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter PIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUL-VO-7Dx">
+                    <rect key="frame" x="16" y="229" width="382" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="textColor" systemColor="systemBlueColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a 4 digit access PIN to keep your access private." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZo-Q2-2cP">
+                    <rect key="frame" x="24" y="266" width="366" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" name="CustomDarkGray"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vy4-In-XKW">
+                    <rect key="frame" x="158.5" y="337" width="97" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="97" id="NyI-v5-WGR"/>
+                        <constraint firstAttribute="height" constant="34" id="bN8-Vk-qiN"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                    <textInputTraits key="textInputTraits" keyboardType="phonePad" secureTextEntry="YES" textContentType="postal-code"/>
+                </textField>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vy4-In-XKW" firstAttribute="centerX" secondItem="jZo-Q2-2cP" secondAttribute="centerX" id="79f-62-l0K"/>
+                <constraint firstItem="vy4-In-XKW" firstAttribute="top" secondItem="jZo-Q2-2cP" secondAttribute="bottom" constant="35" id="BtV-fb-Hpm"/>
+                <constraint firstItem="jZo-Q2-2cP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="GbH-8y-I4Q"/>
+                <constraint firstItem="jUL-VO-7Dx" firstAttribute="top" secondItem="Yq2-0L-eej" secondAttribute="bottom" constant="8" symbolic="YES" id="OtK-XJ-4aa"/>
+                <constraint firstItem="Yq2-0L-eej" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" multiplier="0.4" id="gNJ-eF-Abu"/>
+                <constraint firstItem="jZo-Q2-2cP" firstAttribute="top" secondItem="jUL-VO-7Dx" secondAttribute="bottom" constant="8" symbolic="YES" id="j3m-Ey-dfe"/>
+                <constraint firstItem="Yq2-0L-eej" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="loM-uf-kIc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jZo-Q2-2cP" secondAttribute="trailing" constant="24" id="ncc-el-bLu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jUL-VO-7Dx" secondAttribute="trailing" constant="16" id="vFs-QX-Ffi"/>
+                <constraint firstItem="jUL-VO-7Dx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="wgQ-8n-vd9"/>
+            </constraints>
+            <point key="canvasLocation" x="-17" y="122"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
+        <namedColor name="CustomDarkGray">
+            <color red="0.34900000691413879" green="0.34900000691413879" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

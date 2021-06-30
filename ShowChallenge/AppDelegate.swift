@@ -7,14 +7,28 @@
 
 import UIKit
 import CoreData
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
+    var appCoordinator: AppCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        IQKeyboardManager.shared.enable = true
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let navigationController = UINavigationController()
+        
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+        
+        appCoordinator = AppCoordinator(navigationController, data: nil)
+        appCoordinator?.start()
+        
         return true
     }
 

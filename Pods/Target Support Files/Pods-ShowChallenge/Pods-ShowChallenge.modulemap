@@ -1,0 +1,6 @@
+framework module Pods_ShowChallenge {
+  umbrella header "Pods-ShowChallenge-umbrella.h"
+
+  export *
+  module * { export * }
+}
